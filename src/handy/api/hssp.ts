@@ -11,7 +11,7 @@ export enum HSSPSetupState {
 
 export const setupHSSP = async (fetch: AxiosInstance, csv: ICsv) => {
   let url = `${process.env.SCRIPT_SERVER!}/${csv.name}`
-  if (process.env.OFFLINE_SCRIPT!) {
+  if (process.env.OFFLINE_SCRIPT === 'true') {
     url = `${process.env.IP!}:${process.env.SERVER_PORT!}/${csv.name}`
     info(`Self host script server: ${url}`)
   }
