@@ -13,7 +13,7 @@ server.use(express.static('./scripts'))
 server.use(koikatsu)
 
 const start = async () => {
-  if (Boolean(process.env.DOWNLOAD_SCRIPT)) {
+  if (process.env.DOWNLOAD_SCRIPT!) {
     await downloadScripts()
   }
 
