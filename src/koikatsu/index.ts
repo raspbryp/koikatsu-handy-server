@@ -84,11 +84,6 @@ router.post('/loop', async (req: Request<unknown, unknown, ILoopRequest>, res) =
       }
       await user.setVelocity(calcAutoSpeed(model.animState as SupportedState, model.speed))
     }
-
-    if (user.animationState !== model.animState) {
-      user.animationState = model.animState as SupportedState
-      info(`${user.handyKey}: new state -> ${model.animState}`)
-    }
   } catch (err) {
     error(err)
   } finally {
